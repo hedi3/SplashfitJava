@@ -1,15 +1,29 @@
-/*
+    /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
 package view;
 
+import ClickSend.Api.SmsApi;
+import ClickSend.ApiClient;
+
+import ClickSend.ApiException;
+import ClickSend.Model.SmsMessage;
+import ClickSend.Model.SmsMessageCollection;
 import entity.Offre;
+
+import java.io.ByteArrayOutputStream;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.net.URL;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Arrays;
+import static java.util.Arrays.stream;
 import java.util.List;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
@@ -18,6 +32,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
@@ -25,6 +40,11 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.AnchorPane;
+import net.glxn.qrgen.image.ImageType;
+import net.glxn.qrgen.QRCode;
 import service.ServiceOffre;
 
 /**
@@ -53,6 +73,14 @@ public class OffreController implements Initializable {
     private Button modifier_off;
     @FXML
     private Button supp_O;
+        @FXML
+    private Button ab;
+       @FXML
+    private AnchorPane op;
+         @FXML
+    private ImageView img;
+             @FXML
+    private ImageView image;
     /**
      * Initializes the controller class.
      * 
@@ -60,8 +88,15 @@ public class OffreController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+        img.setImage(new Image("file:C:/Users/hedia/Downloads/pidev-main (1)/pidev-main/src/view/logo.png"));
+          AnchorPane op=new AnchorPane();
      afficher_off();
-    }    
+    }    public void ab() throws IOException{
+         AnchorPane pane=FXMLLoader.load(getClass().getResource("Abonnement.fxml"));
+        op.getChildren().setAll(pane);
+    }
+    
+             
      private void Error(String msg) {
       Alert alert = new Alert(Alert.AlertType.ERROR);
 alert.setTitle("Error Dialog");
@@ -100,7 +135,7 @@ alert.showAndWait();
     }   
 
    @FXML
-    void ajouterO(ActionEvent event) {
+    void ajouterO(ActionEvent event) throws FileNotFoundException, IOException {
        ServiceOffre ps= new ServiceOffre();
         Offre p =new Offre();
         //p.setId(Integer.parseInt(id.getText()) );
@@ -117,7 +152,22 @@ alert.showAndWait();
          else{         p.setSolde(solde.getText());
         p.setDescription(description.getText());
         p.setDuree(duree.getText()) ;
+       
+//       sms.sms();
+      //  sms s=new sms();
+//        s.smss();
        ps.ajouter_off(p);
+       System.out.println("qrcode0");
+        ByteArrayOutputStream out=QRCode.from(description.getText()).to(ImageType.JPG).stream();
+        System.out.println("qrcode1");
+        File f = new File("C:/Users/hedia/Downloads/complexeSportif-master/complexeSportif-master/public/front/assets/images/test.jpg");
+        System.out.println("qrcode2");
+        FileOutputStream fos= new FileOutputStream(f);
+        System.out.println("qrcode3");
+        fos.write(out.toByteArray());
+             System.out.println("qrcode4");
+        fos.flush();
+        image.setImage(new Image("file:C:/Users/hedia/Downloads/complexeSportif-master/complexeSportif-master/public/front/assets/images/test.jpg"));
        System.out.println("offre ajouter avec succé");
        afficher_off();}
     }
@@ -142,6 +192,8 @@ ps.supprimer_off(x);
 solde.setText("");
 description.setText("");
 duree.setText("");
+
+
 
 afficher_off();
     }

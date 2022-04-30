@@ -53,7 +53,7 @@ public class mail {
             message.setFrom(new InternetAddress(myacountemail));
             message.setRecipient(Message.RecipientType.TO,new InternetAddress(recepient) );
             message.setSubject("notifiaction!");
-            message.setText("abonnement effectué!");
+            message.setText("abonnement effectué avec succes!");
             return message;
         } catch (Exception ex) {
             Logger.getLogger(mail.class.getName()).log(Level.SEVERE, null, ex);

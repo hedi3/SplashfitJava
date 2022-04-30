@@ -7,6 +7,7 @@ package view;
 
 import entity.Abonnement;
 import entity.mail;
+import java.io.IOException;
 import java.net.URL;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -19,6 +20,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
@@ -26,6 +28,9 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.AnchorPane;
 import javax.mail.MessagingException;
 import service.ServiceAbonnement;
 
@@ -35,6 +40,8 @@ import service.ServiceAbonnement;
  * @author hedia
  */
 public class AbonnementController implements Initializable {
+    @FXML
+    private Button of;
   @FXML
     private TableView<Abonnement> tb_ab;
     @FXML
@@ -43,6 +50,10 @@ public class AbonnementController implements Initializable {
     private TableColumn<Abonnement, String> tb_email;
     @FXML
     private TableColumn<Abonnement, String> tb_numtel;
+      @FXML
+    private AnchorPane ap;
+            @FXML
+    private ImageView imgg;
 @FXML
     private Button ajouter;
     @FXML
@@ -62,8 +73,11 @@ public class AbonnementController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+         imgg.setImage(new Image("file:C:/Users/hedia/Downloads/pidev-main (1)/pidev-main/src/view/logo.png"));
+        AnchorPane ap=new AnchorPane();
      afficher_ab();
-    }    
+    }  
+    
      private void Error(String msg) {
       Alert alert = new Alert(Alert.AlertType.ERROR);
 alert.setTitle("Error Dialog");
@@ -100,7 +114,11 @@ alert.showAndWait();
             Logger.getLogger(ViewController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }   
-
+ @FXML
+ void of() throws IOException{
+      AnchorPane pane=FXMLLoader.load(getClass().getResource("offre.fxml"));
+        ap.getChildren().setAll(pane);
+ }
    @FXML
     void ajouter(ActionEvent event) throws MessagingException {
        ServiceAbonnement ps= new ServiceAbonnement();
