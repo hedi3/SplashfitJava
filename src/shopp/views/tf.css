@@ -1,0 +1,19 @@
+.text-field
+{
+    -fx-background-color: #02030A;
+    -fx-border-color: #B7C3D7;
+    -fx-border-radius: 2em ;
+    -fx-text-inner-color :  #ffffff;
+}
+
+.combo-box .list-view .list-cell
+{
+    -fx-text-fill: #ffffff;
+    -fx-background-color: #02030A;
+    
+}
+.combo-box .list-cell{
+    
+     -fx-text-fill: #ffffff;
+    
+}

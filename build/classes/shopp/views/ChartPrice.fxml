@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="452.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="shopp.views.ChartPriceController">
+   <stylesheets>
+      <URL value="@style.css" />
+      <URL value="@style_1.css" />
+   </stylesheets>
+   <children>
+      <PieChart fx:id="PieChartPrice" layoutX="73.0" layoutY="65.0" prefHeight="366.0" prefWidth="455.0" />
+      <Label layoutX="187.0" layoutY="29.0" text="Statistique des prix">
+         <font>
+            <Font name="System Bold" size="25.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

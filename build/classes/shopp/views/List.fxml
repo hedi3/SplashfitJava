@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="750.0" prefWidth="936.0" style="-fx-background-color: #DFF3FB;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="shopp.views.ListController">
+   <children>
+      <TextField fx:id="inputRech" layoutX="223.0" layoutY="37.0" prefHeight="53.0" prefWidth="360.0" />
+      <Button fx:id="supp" layoutX="705.0" layoutY="52.0" mnemonicParsing="false" onAction="#supp" prefHeight="43.0" prefWidth="119.0" style="-fx-background-color: #DC143C;" text="Supprimer" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Button>
+      <Button fx:id="supp1" layoutX="597.0" layoutY="52.0" mnemonicParsing="false" onAction="#Modif" prefHeight="43.0" prefWidth="102.0" style="-fx-background-color: #1E7FCB;" text="Modifier" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Button>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="493.0" layoutX="28.0" layoutY="119.0" stroke="BLACK" strokeType="INSIDE" width="247.0" />
+      <Label layoutX="127.0" layoutY="168.0" text="Dashbord">
+         <font>
+            <Font name="System Bold" size="21.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="36.0" fitWidth="39.0" layoutX="51.0" layoutY="167.0">
+         <image>
+            <Image url="@../images/home.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="43.0" fitWidth="39.0" layoutX="51.0" layoutY="246.0">
+         <image>
+            <Image url="@../images/event.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="43.0" fitWidth="46.0" layoutX="48.0" layoutY="339.0">
+         <image>
+            <Image url="@../images/testing.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="52.0" fitWidth="46.0" layoutX="48.0" layoutY="429.0">
+         <image>
+            <Image url="@../images/people.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="Ajouter" layoutX="833.0" layoutY="52.0" mnemonicParsing="false" onAction="#Ajouter" prefHeight="43.0" prefWidth="96.0" style="-fx-background-color: #32CD32;" text="Ajouter" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Button>
+      <Label fx:id="User" layoutX="895.0" layoutY="14.0" text="Label" />
+      <TableView fx:id="tableview" layoutX="295.0" layoutY="147.0" prefHeight="438.0" prefWidth="555.0">
+        <columns>
+          <TableColumn fx:id="nom" prefWidth="163.20001220703125" text="nom" />
+          <TableColumn fx:id="prenom" prefWidth="120.79998779296875" text="prenom" />
+            <TableColumn fx:id="adresse" prefWidth="168.79998779296875" text="adresse" />
+            <TableColumn fx:id="roles" prefWidth="99.20001220703125" text="roles" />
+            <TableColumn fx:id="email" prefWidth="184.00006103515625" text="email" />
+        </columns>
+      </TableView>
+      <Button fx:id="pdf2" layoutX="597.0" layoutY="104.0" mnemonicParsing="false" onAction="#pdf2" prefHeight="43.0" prefWidth="69.0" style="-fx-background-color: #DC143C;" text="PDF" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Button>
+      <Hyperlink fx:id="prec" layoutX="24.0" layoutY="24.0" onAction="#prec" text="Se deconnecter">
+         <font>
+            <Font name="System Bold" size="21.0" />
+         </font>
+      </Hyperlink>
+   </children>
+</AnchorPane>
