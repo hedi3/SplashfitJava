@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.EditUserController">
+   <children>
+      <AnchorPane id="AnchorPane" layoutX="10.0" layoutY="10.0" prefHeight="701.0" prefWidth="1011.0" style="-fx-background-color: #DFF3FB;">
+         <children>
+            <Label fx:id="welcome" layoutX="575.0" layoutY="24.0" text="Modifier User" textFill="#1e0540">
+               <font>
+                  <Font name="System Bold" size="32.0" />
+               </font>
+            </Label>
+            <TextField fx:id="Nom" layoutX="516.0" layoutY="78.0" prefHeight="55.0" prefWidth="401.0" promptText="Nom" />
+            <Button fx:id="A" layoutX="630.0" layoutY="599.0" mnemonicParsing="false" onAction="#insert" prefHeight="47.0" prefWidth="120.0" style="-fx-background-color: #1E7FCB; -fx-border-radius: 50; -fx-background-radius: 50;" text="Ajouter" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Button>
+            <TextField fx:id="email" layoutX="516.0" layoutY="211.0" prefHeight="55.0" prefWidth="401.0" promptText="Email" />
+            <TextField fx:id="mdp" accessibleRole="PASSWORD_FIELD" layoutX="516.0" layoutY="351.0" prefHeight="55.0" prefWidth="401.0" promptText="Password" />
+            <ComboBox fx:id="usertype" layoutX="516.0" layoutY="436.0" prefHeight="55.0" prefWidth="401.0" promptText="Role" />
+            <Hyperlink fx:id="prec" layoutX="14.0" layoutY="14.0" onAction="#prec" text="Retour">
+               <font>
+                  <Font name="System Bold" size="21.0" />
+               </font>
+            </Hyperlink>
+            <Label fx:id="User" layoutX="932.0" layoutY="24.0" text="Label" />
+            <TextField fx:id="Prenom" layoutX="516.0" layoutY="147.0" prefHeight="55.0" prefWidth="401.0" promptText="Prenom" />
+            <ImageView fx:id="imgajoutincours" fitHeight="76.0" fitWidth="112.0" layoutX="330.0" layoutY="556.0" pickOnBounds="true" preserveRatio="true" />
+            <Label fx:id="imgpathttt" layoutX="146.0" layoutY="603.0" text="Label" visible="false" />
+            <Button fx:id="Timage" layoutX="515.0" layoutY="517.0" mnemonicParsing="false" onAction="#addimgcours" prefHeight="47.0" prefWidth="402.0" text="Browse" />
+            <Label fx:id="labelid" layoutX="199.0" layoutY="125.0" text="labelid" visible="false" />
+            <Label fx:id="imgpathttt" layoutX="132.0" layoutY="78.0" text="Label" visible="false" />
+            <ImageView fx:id="imgajoutincours1" fitHeight="258.0" fitWidth="249.0" layoutX="97.0" layoutY="244.0" pickOnBounds="true" preserveRatio="true" />
+            <TextField fx:id="adresse" accessibleRole="PASSWORD_FIELD" layoutX="515.0" layoutY="282.0" prefHeight="55.0" prefWidth="401.0" promptText="adresse" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
